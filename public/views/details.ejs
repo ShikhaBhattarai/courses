@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <link href="/assets/stylesheets/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <%if(course.courseID==null){%>
+  <table>
+    <tr>
+      <td>No courses available!</td>
+    </tr>
+  </table>
+  <%}%>
+<%if(course.courseID!=null){%>
+  <table id="courses">
+    <tr>
+      <th>CourseID</th>
+      <th>Title</th>
+      <th>Term</th>
+      <th>Instructor</th>
+    </tr>
+    <tr>
+      <td><%= course.courseID%></td>
+      <td><%= course.courseTitle%></td>
+      <td><%= course.courseTerm%></td>
+      <td><%= course.courseInstructor%></td>
+    </tr>
+    <tr>
+      <td colspan="4"><%- include ('image.ejs') %></td>
+    </tr>
+  </table>
+  <%}%>
+  <div class="back">
+      <a class="back-button"href="/">Go back</a>
+    </div>
+</body>
+
+</html>
